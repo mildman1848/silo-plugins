@@ -93,10 +93,6 @@
         "linux/arm64": {
           "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/plugin-linux-arm64"
         }
-      },
-      "approval": {
-        "state": "community",
-        "managed_by": "Mildman1848"
       }
     }
   ]
