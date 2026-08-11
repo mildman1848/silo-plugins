@@ -5,7 +5,6 @@
         "plugin_id": "mildman1848.watcharr",
         "version": "0.1.0",
         "silo_api_version": "v1",
-        "category": "Sync/Watch Providers",
         "presentation": {
           "display_name": "Watcharr Sync",
           "summary": "Two-way watched movie and episode sync between Silo and Watcharr.",
@@ -71,7 +70,7 @@
                     {
                       "key": "base_url",
                       "label": "Watcharr Base URL",
-                      "control": "ADMIN_FORM_CONTROL_TEXT",
+                      "control": 1,
                       "placeholder": "https://watcharr.example.test",
                       "required": true
                     }
@@ -80,8 +79,7 @@
               }
             ]
           }
-        ],
-        "global_config_schema": []
+        ]
       },
       "repo_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr",
       "checksums_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/checksums.txt",
@@ -95,6 +93,10 @@
         "linux/arm64": {
           "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/plugin-linux-arm64"
         }
+      },
+      "approval": {
+        "state": "community",
+        "managed_by": "Mildman1848"
       }
     }
   ]
