@@ -40,15 +40,15 @@
             "description": "Imports and exports watched movies and TV episodes to Watcharr.",
             "watch_sync_provider": {
               "auth_methods": [
-                "WATCH_SYNC_AUTH_METHOD_API_KEY"
+                2
               ],
               "export_watched": true,
               "export_unwatched": false,
               "import_watched": true,
               "import_progress": false,
               "supported_media_types": [
-                "WATCH_SYNC_MEDIA_TYPE_MOVIE",
-                "WATCH_SYNC_MEDIA_TYPE_EPISODE"
+                1,
+                2
               ],
               "external_id_namespaces": [
                 "tmdb",
