@@ -1,0 +1,101 @@
+{
+  "plugins": [
+    {
+      "manifest": {
+        "plugin_id": "mildman1848.watcharr",
+        "version": "0.1.0",
+        "silo_api_version": "v1",
+        "category": "Sync/Watch Providers",
+        "presentation": {
+          "display_name": "Watcharr Sync",
+          "summary": "Two-way watched movie and episode sync between Silo and Watcharr.",
+          "description_markdown": "Synchronizes watched movies and watched TV episodes between Silo and a self-hosted Watcharr instance using Silo's watch_sync_provider.v1 pipeline. The plugin acts as a stateless protocol adapter; Silo owns scheduling, credentials, retries, ordering, and reconciliation.",
+          "setup_markdown": "1. Install the plugin.\n2. Configure the Watcharr Base URL, for example `https://watcharr.example.test`.\n3. Create a Watcharr connection with an API key value containing a valid Watcharr bearer token/JWT.\n4. Enable watched import/export for movies and episodes.\n\nDeletion/unwatched events are not exported in v1 unless Watcharr exposes a safe reversible semantics for your workflow.",
+          "homepage_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr",
+          "source_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr",
+          "support_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/issues",
+          "changelog_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases",
+          "publisher_name": "Mildman1848",
+          "publisher_url": "https://github.com/mildman1848",
+          "license_spdx": "AGPL-3.0-or-later"
+        },
+        "supported_platforms": [
+          {
+            "os": "linux",
+            "arch": "amd64"
+          },
+          {
+            "os": "linux",
+            "arch": "arm64"
+          },
+          {
+            "os": "darwin",
+            "arch": "arm64"
+          }
+        ],
+        "capabilities": [
+          {
+            "type": "watch_sync_provider.v1",
+            "id": "watcharr",
+            "display_name": "Watcharr",
+            "description": "Imports and exports watched movies and TV episodes to Watcharr.",
+            "watch_sync_provider": {
+              "auth_methods": [
+                "WATCH_SYNC_AUTH_METHOD_API_KEY"
+              ],
+              "export_watched": true,
+              "export_unwatched": false,
+              "import_watched": true,
+              "import_progress": false,
+              "supported_media_types": [
+                "WATCH_SYNC_MEDIA_TYPE_MOVIE",
+                "WATCH_SYNC_MEDIA_TYPE_EPISODE"
+              ],
+              "external_id_namespaces": [
+                "tmdb",
+                "imdb",
+                "tvdb",
+                "watcharr"
+              ],
+              "max_batch_size": 50
+            },
+            "config_schema": [
+              {
+                "key": "connection",
+                "title": "Watcharr Base URL",
+                "description": "Base URL of the Watcharr instance, e.g. https://watcharr.example.test",
+                "required": true,
+                "json_schema": "{\"type\":\"object\",\"properties\":{\"base_url\":{\"type\":\"string\",\"format\":\"uri\",\"minLength\":1}},\"required\":[\"base_url\"]}",
+                "admin_form": {
+                  "fields": [
+                    {
+                      "key": "base_url",
+                      "label": "Watcharr Base URL",
+                      "control": "ADMIN_FORM_CONTROL_TEXT",
+                      "placeholder": "https://watcharr.example.test",
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "global_config_schema": []
+      },
+      "repo_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr",
+      "checksums_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/checksums.txt",
+      "binaries": {
+        "darwin/arm64": {
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/plugin-darwin-arm64"
+        },
+        "linux/amd64": {
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/plugin-linux-amd64"
+        },
+        "linux/arm64": {
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/plugin-linux-arm64"
+        }
+      }
+    }
+  ]
+}
