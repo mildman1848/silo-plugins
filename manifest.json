@@ -3,8 +3,8 @@
     {
       "manifest": {
         "plugin_id": "mildman1848.oidc",
-        "version": "0.1.0",
-        "checksum": "391bedbe175829106834d30d53fa1c2d9da58b30c6af616da4badd19d807c9ea",
+        "version": "0.1.2",
+        "checksum": "20e6a64bfdfddc498be63fee9284362e0b90865ff500f728eecdac2536458563",
         "silo_api_version": "v1",
         "category": "Authentication/SSO",
         "presentation": {
@@ -111,19 +111,19 @@
         ]
       },
       "repo_url": "https://github.com/mildman1848/silo-plugin-auth-oidc",
-      "checksums_url": "https://github.com/mildman1848/silo-plugin-auth-oidc/releases/download/v0.1.0/checksums.txt",
+      "checksums_url": "https://github.com/mildman1848/silo-plugin-auth-oidc/releases/download/v0.1.2/checksums.txt",
       "binaries": {
         "linux/amd64": {
-          "url": "https://github.com/mildman1848/silo-plugin-auth-oidc/releases/download/v0.1.0/plugin-linux-amd64",
-          "checksum": "391bedbe175829106834d30d53fa1c2d9da58b30c6af616da4badd19d807c9ea"
+          "url": "https://github.com/mildman1848/silo-plugin-auth-oidc/releases/download/v0.1.2/plugin-linux-amd64",
+          "checksum": "20e6a64bfdfddc498be63fee9284362e0b90865ff500f728eecdac2536458563"
         },
         "linux/arm64": {
-          "url": "https://github.com/mildman1848/silo-plugin-auth-oidc/releases/download/v0.1.0/plugin-linux-arm64",
-          "checksum": "8ff2979d265d633490e53476e7a22a68d09d267d9e3bfea60c7f0d7ceab563e0"
+          "url": "https://github.com/mildman1848/silo-plugin-auth-oidc/releases/download/v0.1.2/plugin-linux-arm64",
+          "checksum": "d909157c37d61bf2c85c0b89722e96011fe3df76f76f98dcd7af47ef5d4fd125"
         },
         "darwin/arm64": {
-          "url": "https://github.com/mildman1848/silo-plugin-auth-oidc/releases/download/v0.1.0/plugin-darwin-arm64",
-          "checksum": "30aac87e9cf20058bd90635b5f53d0434f72c36e75bef8a90ed71926ba9e57fe"
+          "url": "https://github.com/mildman1848/silo-plugin-auth-oidc/releases/download/v0.1.2/plugin-darwin-arm64",
+          "checksum": "3ebd19d7d717221ea1ee72727e899d86c55dad2e923a90fa15699fe29b236081"
         }
       }
     },
