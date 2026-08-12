@@ -1,0 +1,61 @@
+# Triggered by plugin repos via repository_dispatch when they publish a release,
+# or manually via workflow_dispatch. Fetches the release manifest and checksums,
+# updates catalog manifest.json, commits and pushes.
+name: Update Catalog
+
+on:
+  repository_dispatch:
+    types:
+      - plugin_release_published
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "GitHub repository in owner/name form"
+        required: true
+        type: string
+      tag:
+        description: "Release tag to publish"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: plugin-catalog-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update catalog manifest
+        env:
+          GITHUB_TOKEN: ${{ secrets.CATALOG_SOURCE_TOKEN || github.token }}
+          PLUGIN_REPO: ${{ inputs.repo || github.event.client_payload.repo }}
+          PLUGIN_TAG: ${{ inputs.tag || github.event.client_payload.tag }}
+        run: |
+          test -n "$PLUGIN_REPO"
+          test -n "$PLUGIN_TAG"
+          python3 scripts/update-catalog.py \
+            --repo "$PLUGIN_REPO" \
+            --tag "$PLUGIN_TAG" \
+            --token "$GITHUB_TOKEN"
+
+      - name: Commit catalog changes
+        env:
+          PLUGIN_REPO: ${{ inputs.repo || github.event.client_payload.repo }}
+          PLUGIN_TAG: ${{ inputs.tag || github.event.client_payload.tag }}
+        run: |
+          if git diff --quiet -- manifest.json; then
+            echo "No changes to manifest.json"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manifest.json
+          git commit -m "chore: update catalog for ${PLUGIN_REPO}@${PLUGIN_TAG}"
+          git pull --rebase origin main
+          git push origin HEAD:main
