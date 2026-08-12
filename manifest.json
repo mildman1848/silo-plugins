@@ -3,7 +3,7 @@
     {
       "manifest": {
         "plugin_id": "mildman1848.watcharr",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "silo_api_version": "v1",
         "presentation": {
           "display_name": "Watcharr Sync",
@@ -57,41 +57,42 @@
                 "watcharr"
               ],
               "max_batch_size": 50
-            },
-            "config_schema": [
-              {
-                "key": "connection",
-                "title": "Watcharr Base URL",
-                "description": "Base URL of the Watcharr instance, e.g. https://watcharr.example.test",
-                "required": true,
-                "json_schema": "{\"type\":\"object\",\"properties\":{\"base_url\":{\"type\":\"string\",\"format\":\"uri\",\"minLength\":1}},\"required\":[\"base_url\"]}",
-                "admin_form": {
-                  "fields": [
-                    {
-                      "key": "base_url",
-                      "label": "Watcharr Base URL",
-                      "control": 1,
-                      "placeholder": "https://watcharr.example.test",
-                      "required": true
-                    }
-                  ]
+            }
+          }
+        ],
+        "global_config_schema": [
+          {
+            "key": "connection",
+            "title": "Watcharr Connection",
+            "description": "Base URL of the Watcharr instance used by this watch-sync provider.",
+            "required": true,
+            "json_schema": "{\"type\":\"object\",\"properties\":{\"base_url\":{\"type\":\"string\",\"format\":\"uri\",\"minLength\":1}},\"required\":[\"base_url\"]}",
+            "admin_form": {
+              "fields": [
+                {
+                  "key": "base_url",
+                  "label": "Watcharr Base URL",
+                  "control": 1,
+                  "placeholder": "https://watcharr.example.test",
+                  "required": true
                 }
-              }
-            ]
+              ],
+              "submit_label": "Save Watcharr settings"
+            }
           }
         ]
       },
       "repo_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr",
-      "checksums_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/checksums.txt",
+      "checksums_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.1/checksums.txt",
       "binaries": {
         "darwin/arm64": {
-          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/plugin-darwin-arm64"
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.1/plugin-darwin-arm64"
         },
         "linux/amd64": {
-          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/plugin-linux-amd64"
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.1/plugin-linux-amd64"
         },
         "linux/arm64": {
-          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.0/plugin-linux-arm64"
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.1/plugin-linux-arm64"
         }
       }
     }
