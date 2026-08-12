@@ -3,7 +3,7 @@
     {
       "manifest": {
         "plugin_id": "mildman1848.watcharr",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "checksum": "__CHECKSUM__",
         "silo_api_version": "v1",
         "category": "Sync/Watch Providers",
@@ -11,7 +11,7 @@
           "display_name": "Watcharr Sync",
           "summary": "Two-way watched movie and episode sync between Silo and Watcharr.",
           "description_markdown": "Synchronizes watched movies and watched TV episodes between Silo and a self-hosted Watcharr instance using Silo's watch_sync_provider.v1 pipeline. The plugin acts as a stateless protocol adapter; Silo owns scheduling, credentials, retries, ordering, and reconciliation.",
-          "setup_markdown": "1. Install the plugin.\n2. Configure the Watcharr Base URL, for example `https://watcharr.example.test`.\n3. In your Silo profile, connect the Watcharr provider. Use the API key field as a Watcharr login secret: `username:password`, JSON `{ \"username\": \"...\", \"password\": \"...\" }`, or an existing Watcharr JWT copied from browser devtools. The plugin exchanges login credentials for Watcharr's bearer/JWT token and Silo stores only the returned token encrypted.\n4. Enable watched import/export for movies and episodes.\n\nDeletion/unwatched events are not exported in v1 unless Watcharr exposes a safe reversible semantics for your workflow.",
+          "setup_markdown": "1. Install the plugin.\n2. Configure the Watcharr Base URL, for example `https://watcharr.example.test`.\n3. In your Silo profile, connect the Watcharr provider with your Watcharr username and password. The Silo UI patch for this image shows separate fields and sends them safely to the existing WatchSync API-key endpoint as structured JSON. The plugin exchanges them for Watcharr's JWT and Silo stores only the returned token encrypted.\n4. Enable watched import/export for movies and episodes.\n\nDeletion/unwatched events are not exported in v1 unless Watcharr exposes a safe reversible semantics for your workflow.",
           "homepage_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr",
           "source_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr",
           "support_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/issues",
@@ -86,19 +86,19 @@
       },
       "repository": "mildman1848/silo-plugin-sync-watcharr",
       "repo_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr",
-      "checksums_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.2/checksums.txt",
+      "checksums_url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.3/checksums.txt",
       "binaries": {
         "linux/amd64": {
-          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.2/plugin-linux-amd64",
-          "checksum": "fad1c3035eda540db8fc51456688eb008aec5c1366793919eac776e266e477f8"
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.3/plugin-linux-amd64",
+          "checksum": "e19fcefa9aa86a83a2e9ecbf4ddd3794596e037ba430d1b8842c868f65e56f13"
         },
         "linux/arm64": {
-          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.2/plugin-linux-arm64",
-          "checksum": "c5f5cad32dfeae0b55022457a28c36fe6fdbd7db9297ded4ca1697aa8af0d2ac"
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.3/plugin-linux-arm64",
+          "checksum": "58aa3ffa1f73e73fe3d8fe66ad2be6a89bdb0614e27e638a81f6042d6d855984"
         },
         "darwin/arm64": {
-          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.2/plugin-darwin-arm64",
-          "checksum": "774fa9ccf9601ed02e991ed3f6c2e9f527d2e68007aad397ad6860df2979aaaf"
+          "url": "https://github.com/mildman1848/silo-plugin-sync-watcharr/releases/download/v0.1.3/plugin-darwin-arm64",
+          "checksum": "54f55c7b8602550133ee7ef708ee79cc9f0780f1624dfeba78a4f82fddb999b1"
         }
       }
     }
