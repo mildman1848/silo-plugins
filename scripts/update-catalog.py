@@ -178,7 +178,7 @@ def main() -> int:
         # Fetch from repo root at the tag
         try:
             raw_manifest = api_get(
-                f"{GITHUB_API}/repos/{args.repo}/contents/manifest.json",
+                f"{GITHUB_API}/repos/{args.repo}/contents/manifest.json?ref={args.tag}",
                 token,
             )
             import base64
@@ -220,6 +220,7 @@ def main() -> int:
 
     if raw_manifest:
         normalized = normalize_manifest(raw_manifest)
+        normalized["version"] = version
         normalized.pop("checksum", None)
         entry["manifest"] = normalized
 
