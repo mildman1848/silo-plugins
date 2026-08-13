@@ -130,7 +130,6 @@
       "manifest": {
         "plugin_id": "mildman1848.watcharr",
         "version": "0.1.3",
-        "checksum": "__CHECKSUM__",
         "silo_api_version": "v1",
         "category": "Sync/Watch Providers",
         "presentation": {
